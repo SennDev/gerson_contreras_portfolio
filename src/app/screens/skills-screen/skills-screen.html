@@ -1,0 +1,108 @@
+<section class="skills-section">
+
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <div class="container">
+
+    <header class="section-header card-animated">
+      <span class="eyebrow">
+        <i class="bi bi-cpu-fill"></i> Competencias
+      </span>
+      <h2 class="section-title">
+        Perfil <span class="text-gradient">Técnico</span>
+      </h2>
+      <p class="section-subtitle">
+        Un desglose honesto de mis capacidades en ingeniería de software,
+        soporte técnico y áreas de aprendizaje continuo.
+      </p>
+    </header>
+
+    <div class="command-center-layout">
+
+      <div class="core-module glass-panel card-animated delay-1">
+
+        <div class="module-header">
+          <div class="icon-box primary-glow">
+            <i class="bi bi-code-square"></i>
+          </div>
+          <h3>Ingeniería & Desarrollo</h3>
+        </div>
+
+        <div class="skills-bars-container">
+          <div class="skill-energy-bar" *ngFor="let skill of coreSkills">
+
+            <div class="skill-meta">
+              <div class="skill-name">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </div>
+              <span class="skill-level">{{ skill.level }}%</span>
+            </div>
+
+            <div class="energy-track">
+              <div class="energy-fill" [style.--target-width]="skill.level + '%'">
+                <div class="energy-pulse"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="expansion-stack">
+
+        <div class="expansion-module glass-panel card-animated delay-2">
+          <div class="module-header">
+            <div class="icon-box hardware-glow">
+              <i class="bi bi-tools"></i>
+            </div>
+            <h4>Soporte Técnico & Hardware</h4>
+          </div>
+
+          <ul class="checklist-ops">
+            <li *ngFor="let op of hardwareOps">
+              <i class="bi bi-check2-circle"></i> {{ op }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="expansion-module glass-panel card-animated delay-3">
+          <div class="module-header">
+            <div class="icon-box game-glow">
+              <i class="bi bi-controller"></i>
+            </div>
+            <h4>Game Dev & Creatividad</h4>
+          </div>
+
+          <div class="tags-cluster">
+            <span class="tech-tag" *ngFor="let tool of gameDevTools">
+              {{ tool }}
+            </span>
+          </div>
+        </div>
+
+        <div class="expansion-module glass-panel card-animated delay-3">
+          <div class="module-header">
+            <div class="icon-box mindset-glow">
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h4>Atributos Profesionales</h4>
+          </div>
+
+          <div class="attributes-grid">
+            <div class="attribute-card" *ngFor="let soft of softSkills">
+              <i class="bi" [class]="soft.icon"></i>
+              <div class="attr-info">
+                <strong>{{ soft.title }}</strong>
+                <small>{{ soft.desc }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

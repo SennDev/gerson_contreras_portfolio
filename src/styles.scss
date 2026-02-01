@@ -1,1 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===============================
+   THEME VARIABLES
+   =============================== */
+:root {
+  /* Base colors */
+  --color-bg-main: #1a1a1a;        /* carbon black */
+  --color-bg-surface: #3c3c47;     /* gunmetal */
+  --color-bg-soft: #ffd6e0;        /* petal frost */
+
+  /* Text */
+  --color-text-main: #f5f5f7;      /* white with slight warmth */
+  --color-text-muted: #c4c4cf;     /* readable muted */
+
+  /* Accents */
+  --color-accent-primary: #8900ff; /* violet ray */
+  --color-accent-secondary: #00ff9c; /* spring green */
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+/* ===============================
+   GLOBAL TYPOGRAPHY & RESET
+   =============================== */
+html, body {
+  width: 100%;
+  min-height: 100vh; /* Asegura que el fondo cubra todo */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden; /* Importante para tus animaciones */
+}
+
+/* -------------------------------
+   TEXT ROLES
+-------------------------------- */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text-main);
+  margin-top: 0;
+}
+
+p {
+  font-size: 1.05rem;
+  font-weight: 450;
+  line-height: 1.85;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+/* ===============================
+   LINKS
+   =============================== */
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--color-accent-secondary);
+}
+
+/* ===============================
+   LAYOUT BASICS
+   =============================== */
+main {
+  min-height: 80vh;
+}
+
+/* ===============================
+   BUTTONS (Arreglado)
+   =============================== */
+.btn {
+  display: inline-flex;          /* Faltaba esto para que tome el padding */
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem;        /* Movido aquí para que aplique a todos */
+  border-radius: 99px;           /* Redondeado estilo píldora */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 1px solid transparent; /* Borde base invisible */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.btn-primary {
+  background-color: rgba(137, 0, 255, 0.18);
+  border-color: rgba(137, 0, 255, 0.45);
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-primary);
+  box-shadow: 0 0 40px rgba(137, 0, 255, 0.55);
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  color: var(--color-text-main);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: white;
+}
+
+/* ===============================
+   CARDS (GLOBAL)
+   =============================== */
+.card, .bento-card {
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--color-text-main);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ===============================
+   NAVBAR & FOOTER
+   =============================== */
+.navbar {
+  background-color: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+  color: var(--color-text-main);
+  font-weight: 700;
+}
+
+.nav-link {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent-primary);
+}
+
+footer {
+  background-color: rgba(26, 26, 26, 0.8);
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   HERO / SECTION TITLES
+   =============================== */
+.hero-eyebrow,
+.section-eyebrow {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero-title,
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ===============================
+   GRADIENT TEXT
+   =============================== */
+.typing-text,
+.text-gradient {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Nota: text-shadow no funciona bien con background-clip: text en algunos navegadores,
+     pero lo mantenemos por tu diseño */
+  text-shadow: 0 0 12px rgba(137,0,255,0.35), 0 0 24px rgba(0,255,156,0.15);
+}
+
+/* ===============================
+   DEEP DYNAMIC BACKGROUND
+   =============================== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20%;
+  z-index: -4;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(137,0,255,0.18), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(0,255,156,0.12), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 60%),
+    linear-gradient(180deg, #0e0e0e, #1a1a1a);
+  animation: bg-drift 60s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes bg-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-4%, -6%) scale(1.1); }
+}
+
+/* ===============================
+   PARTICLES – LAYER 1
+   =============================== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1.5px 1.5px at 70% 40%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.15), transparent);
+  background-size: 300px 300px;
+  animation: particles-layer-1 90s linear infinite;
+}
+
+@keyframes particles-layer-1 {
+  to { transform: translateY(-600px) translateX(300px); }
+}
+
+/* ===============================
+   PARTICLES – LAYER 2
+   =============================== */
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(3px 3px at 25% 30%, rgba(137,0,255,0.15), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(0,255,156,0.12), transparent);
+  background-size: 500px 500px;
+  animation: particles-layer-2 140s linear infinite reverse;
+}
+
+@keyframes particles-layer-2 {
+  to { transform: translateY(-800px) translateX(-400px); }
+}
+
+/* ===============================
+   ATMOSPHERIC NOISE
+   =============================== */
+html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.25;
+}

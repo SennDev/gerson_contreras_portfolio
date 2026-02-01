@@ -1,0 +1,264 @@
+:host {
+  display: block;
+}
+
+/* ======================================================
+   FOOTER BASE
+====================================================== */
+.footer {
+  position: relative;
+  margin-top: 8rem;
+  padding: 5rem 0 2rem;
+
+  /* Fondo Glass Oscuro y Profundo */
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow Decorativo Superior */
+.footer-glow {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(137, 0, 255, 0.12), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ======================================================
+   GRID LAYOUT
+====================================================== */
+.footer-grid {
+  display: grid;
+  /* Distribución: Info ancha, Nav compacta, Social compacta */
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.col-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* ======================================================
+   COLUMNA 1: MARCA
+====================================================== */
+.brand-col {
+  max-width: 380px;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: white;
+  display: block;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, var(--color-text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-accent-secondary);
+  background: rgba(0, 255, 156, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 255, 156, 0.1);
+
+  .dot { color: rgba(255,255,255,0.2); }
+}
+
+/* ======================================================
+   COLUMNA 2: NAV
+====================================================== */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  position: relative;
+
+  &:hover {
+    color: white;
+    transform: translateX(5px);
+  }
+
+  &.highlight {
+    color: var(--color-accent-primary);
+    font-weight: 600;
+  }
+}
+
+/* ======================================================
+   COLUMNA 3: SOCIAL (COLORES DE MARCA)
+====================================================== */
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* Estilo Base Botón Social */
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Base */
+.social-btn:hover {
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+  border-color: transparent;
+}
+
+/* --- COLORES DE MARCA ESPECÍFICOS --- */
+
+/* GitHub (Negro/Gris) */
+.social-btn.github:hover {
+  background: #24292e;
+  box-shadow: 0 5px 15px rgba(36, 41, 46, 0.5);
+}
+
+/* LinkedIn (Azul) */
+.social-btn.linkedin:hover {
+  background: #0077b5;
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.5);
+}
+
+/* X / Twitter (Negro puro) */
+.social-btn.twitter:hover {
+  background: #000000;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Instagram (Gradiente) */
+.social-btn.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 5px 15px rgba(214, 36, 159, 0.5);
+}
+
+/* YouTube (Rojo) */
+.social-btn.youtube:hover {
+  background: #ff0000;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* TikTok (Negro + Sombra Glitch) */
+.social-btn.tiktok:hover {
+  background: #000000;
+  box-shadow: 2px 2px 0px rgba(0, 242, 234, 0.7), -2px -2px 0px rgba(255, 0, 80, 0.7);
+}
+
+/* ======================================================
+   BOTTOM COPYRIGHT
+====================================================== */
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+
+  span {
+    opacity: 0.7;
+    margin-left: 0.5rem;
+
+    @media (max-width: 600px) {
+      display: block;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.heart-beat {
+  color: #ff4b4b;
+  display: inline-block;
+  animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Todo en columna */
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .brand-col {
+    margin: 0 auto;
+  }
+
+  .footer-nav {
+    align-items: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}

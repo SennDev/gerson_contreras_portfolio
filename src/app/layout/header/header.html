@@ -1,0 +1,58 @@
+<nav class="header" role="navigation" aria-label="Main navigation">
+
+  <div class="header-capsule glass-skeuo">
+
+    <div class="shimmer-border"></div>
+
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <div class="brand-icon-wrapper">
+        <i class="bi bi-cpu-fill brand-icon"></i>
+      </div>
+      <span class="brand-text">Gerson</span>
+    </a>
+
+    <div class="nav-menu" [class.open]="menuOpen">
+
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+        Inicio
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
+        Sobre mí
+      </a>
+
+      <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">
+        Skills
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
+        Proyectos
+      </a>
+
+      <a routerLink="/certifications" routerLinkActive="active" (click)="closeMenu()">
+        Certificaciones
+      </a>
+
+      <a routerLink="/contact" class="cta-link" (click)="closeMenu()">
+        <span>Contacto</span>
+        <div class="cta-glow"></div>
+      </a>
+
+    </div>
+
+    <button
+      class="menu-toggle"
+      [class.active]="menuOpen"
+      aria-label="Alternar menú"
+      (click)="toggleMenu()"
+    >
+      <div class="bar top"></div>
+      <div class="bar mid"></div>
+      <div class="bar bot"></div>
+    </button>
+
+  </div>
+
+  <div class="menu-backdrop" [class.open]="menuOpen" (click)="closeMenu()"></div>
+
+</nav>

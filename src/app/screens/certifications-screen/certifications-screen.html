@@ -1,0 +1,60 @@
+<section class="section certifications">
+
+  <div class="certifications-glow"></div>
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-eyebrow">
+        <i class="bi bi-award-fill me-2"></i>
+        Certificaciones
+      </span>
+      <h2 class="section-title">
+        Formación Continua
+      </h2>
+      <p class="section-description">
+        Validación de competencias técnicas y lingüísticas a través de entidades reconocidas globalmente.
+      </p>
+    </div>
+
+    <div class="certifications-grid">
+
+      <article
+        class="cert-card glass-panel"
+        *ngFor="let cert of certifications; let i = index"
+        [style.animationDelay]="i * 0.15 + 's'"
+      >
+        <div class="cert-image">
+          <div class="image-overlay"></div>
+          <img
+            [src]="cert.image"
+            [alt]="cert.title"
+            loading="lazy"
+            onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/8900ff?text=Certificado'"
+          />
+        </div>
+
+        <div class="cert-body">
+          <h3>{{ cert.title }}</h3>
+
+          <span class="cert-provider">
+            <i class="bi" [ngClass]="cert.icon"></i>
+            {{ cert.provider }}
+          </span>
+
+          <a
+            [href]="cert.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cert-link"
+          >
+            Ver Credencial
+            <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>

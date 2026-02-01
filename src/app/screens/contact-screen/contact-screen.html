@@ -1,0 +1,177 @@
+<section class="section contact-page">
+
+  <div class="glow-bg top-right"></div>
+  <div class="glow-bg bottom-left"></div>
+
+  <div class="container contact-container">
+
+    <header class="contact-header">
+      <span class="eyebrow">
+        <i class="bi bi-chat-square-text-fill"></i> Hablemos
+      </span>
+      <h2 class="section-title">
+        ¿Tienes una idea? <br>
+        <span class="text-gradient">Hagámosla realidad.</span>
+      </h2>
+      <p class="section-desc">
+        Estoy disponible para oportunidades freelance, contratos o simplemente para conectar.
+        Cuéntame sobre tu proyecto.
+      </p>
+    </header>
+
+    <div class="contact-layout">
+
+      <div class="form-wrapper glass-panel card-animated">
+
+        <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" class="contact-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Nombre</label>
+              <div class="input-wrapper">
+                <i class="bi bi-person input-icon"></i>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Tu nombre completo"
+                  [class.invalid]="isInvalid('name')"
+                >
+              </div>
+              <small class="error-msg" *ngIf="isInvalid('name')">Requerido</small>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <div class="input-wrapper">
+                <i class="bi bi-envelope input-icon"></i>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  formControlName="email"
+                  placeholder="ejemplo@correo.com"
+                  [class.invalid]="isInvalid('email')"
+                >
+              </div>
+              <small class="error-msg" *ngIf="isInvalid('email')">Correo inválido</small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="subject" class="form-label">Asunto</label>
+              <div class="input-wrapper">
+                <i class="bi bi-hash input-icon"></i>
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  formControlName="subject"
+                  placeholder="¿De qué trata?"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reason" class="form-label">Motivo</label>
+              <div class="input-wrapper">
+                <i class="bi bi-briefcase input-icon"></i>
+                <select id="reason" class="form-control" formControlName="reason">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="freelance">Proyecto Freelance</option>
+                  <option value="job">Oportunidad Laboral</option>
+                  <option value="collab">Colaboración</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message" class="form-label">Mensaje</label>
+            <div class="input-wrapper textarea-wrapper">
+              <i class="bi bi-chat-text input-icon"></i>
+              <textarea
+                id="message"
+                rows="5"
+                class="form-control"
+                formControlName="message"
+                placeholder="Cuéntame los detalles..."
+                [class.invalid]="isInvalid('message')"
+              ></textarea>
+            </div>
+            <small class="error-msg" *ngIf="isInvalid('message')">Mínimo 10 caracteres</small>
+          </div>
+
+          <div class="form-footer full-width">
+            <button
+              type="submit"
+              class="btn-submit"
+              [disabled]="contactForm.invalid || sending"
+            >
+              <span *ngIf="!sending">
+                Enviar Mensaje <i class="bi bi-send-fill"></i>
+              </span>
+              <span *ngIf="sending" class="sending-state">
+                <div class="spinner"></div> Enviando...
+              </span>
+            </button>
+
+            <div class="success-message" *ngIf="success">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>¡Mensaje enviado con éxito! Responderé pronto.</span>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="info-stack card-animated delay-1">
+
+        <div class="info-card glass-panel">
+          <div class="icon-box">
+            <i class="bi bi-envelope-at-fill"></i>
+          </div>
+          <div>
+            <span class="label">Escríbeme directamente</span>
+            <a href="mailto:gersonem8900@outlook.com" class="value-link">
+              gersonem8900@outlook.com
+            </a>
+          </div>
+        </div>
+
+        <div class="info-card glass-panel">
+          <div class="icon-box secondary">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div>
+            <span class="label">Ubicación</span>
+            <p class="value-text">Puebla, México (Zona horaria CST)</p>
+          </div>
+        </div>
+
+        <div class="social-card glass-panel">
+          <span class="label">Sígueme en redes</span>
+          <div class="social-links">
+            <a href="https://github.com/SennDev" target="_blank" class="social-btn github" aria-label="Github">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/gerson-gonzalez-senn4520/" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://x.com/senn4520" target="_blank" class="social-btn twitter" aria-label="Twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.instagram.com/gerson_4520m/" target="_blank" class="social-btn instagram" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
