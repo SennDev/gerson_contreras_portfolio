@@ -1,59 +1,84 @@
-# GersonContrerasPortfolio
+# Gerson Contreras | Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.14.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Build Status](https://img.shields.io/github/actions/workflow/status/SennDev/gerson_contreras_portfolio/deploy.yml?style=for-the-badge&label=Build)
 
-## Development server
+[![Live Demo](https://img.shields.io/badge/🚀_View_Live_Demo-Click_Here-success?style=for-the-badge)](https://senndev.github.io/gerson_contreras_portfolio/)
 
-To start a local development server, run:
+> **A digital portfolio designed to showcase my technical skills and highlight my most outstanding projects in Web Engineering and Game Development.**
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 👨‍💻 About Me
 
-## Code scaffolding
+**IT Engineer & Creative Developer.**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+I build robust digital solutions with a focus on human-centric design, bridging the gap between complex logic and immersive user experiences.
 
-```bash
-ng generate component component-name
-```
+* **Professional Focus:** I am an **Information Technology Engineer** specialized in Frontend development. I consider myself an adaptable professional, curious by nature, and committed to building clean and efficient web interfaces.
+* **Creative Side:** Beyond code, I enjoy exploring my creativity through **game development**, a personal passion that complements my technical vision.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## ✨ Key Features
 
-## Building
+This portfolio was built with a custom **"Hyper-Glass" Design System**, focusing on modern UI trends:
 
-To build the project run:
+* **💎 Hyper-Glass UI:** A tactile, frosted-glass aesthetic with deep shadows and neomorphic touches.
+* **🍱 Bento Grid Layout:** A responsive, modular grid system for organizing content elegantly.
+* **⚡ Angular Signals:** State management using the latest Angular features for optimal performance.
+* **📱 Fully Responsive:** Adaptive layouts that transform from complex grids to sleek mobile stacks.
+* **🎨 SCSS Architecture:** Modular styles with advanced mixins for glassmorphism and animations.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🛠️ Tech Stack
 
-## Running unit tests
+**Frontend Core:**
+* Angular 17+ (Standalone Components)
+* TypeScript
+* HTML5 & SCSS (Sass)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Tools & Ecosystem:**
+* Git & GitHub
+* Node.js & NPM
+* Visual Studio Code
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 🚀 Getting Started
 
-For end-to-end (e2e) testing, run:
+If you want to run this project locally:
 
-```bash
-ng e2e
-```
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/SennDev/gerson_contreras_portfolio.git](https://github.com/SennDev/gerson_contreras_portfolio.git)
+    ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+2.  **Install dependencies**
+    ```bash
+    cd gerson_contreras_portfolio
+    npm install
+    ```
 
-## Additional Resources
+3.  **Run the development server**
+    ```bash
+    ng serve
+    ```
+    Navigate to `http://localhost:4200/`.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 📬 Connect
+
+* **LinkedIn:** [Gerson Contreras](https://www.linkedin.com/in/gerson-gonzalez-senn4520/)
+* **GitHub:** [@SennDev](https://github.com/SennDev)
+* **Email:** gersonem8900@outlook.com
+
+---
+
+<p align="center">
+  <i>Designed and built with <span style="color: #ff4b4b;">❤</span> by Gerson Contreras.</i>
+</p>
