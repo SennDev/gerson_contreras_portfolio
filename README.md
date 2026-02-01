@@ -37,7 +37,7 @@ This portfolio was built with a custom **"Hyper-Glass" Design System**, focusing
 ## 🛠️ Tech Stack
 
 **Frontend Core:**
-* Angular 17+ (Standalone Components)
+* Angular 20+ (Standalone Components)
 * TypeScript
 * HTML5 & SCSS (Sass)
 
